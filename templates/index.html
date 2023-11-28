@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+{% block body %}
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<html>
+<head>
+     <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col">
+            <div class="card">
+                <div class="row card-body">
+                   <div class="col">
+                    <h1 class="display-2 mb-4">AI Proctored Screening Test</h1>
+                    <p class="lead mb-4 text-muted">Based on the marks scored on thios screening test you will proceed to the next round. </p>
+                    </div>
+                    <div class="col text-right">
+                      <img src="{{ url_for('static', filename='myproctoraiindex.gif') }}"/>
+                    </div>
+                                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+        
+<br>
+
+<section class="py-5">
+    <div class="container">
+    <div class="card shadow bg-white text-secondary">
+    <div class="card-body">
+<div class="pt-5 pb-4 mb-3 border-top">
+    <div class="container pb-2">
+      <h2 class="text-center  mb-5 no-xs-margin-bottom">
+        Verify Your Authenticity With a 3-point Authentication System
+      </h2>
+      <div class="row  py-4">
+        <div class="col-md-5 mt-5">
+          <div class="row mb-2">
+            <div class="col-xs-3">
+              <img loading="lazy" src="/static/examcheck.png" alt="Candidate-enter-registration-details" class="center-block img img-responsive" style="height:45px;">
+              
+            </div>
+            <div class="col-xs-9 pl-0">
+              <h4 class="mt-1 pl-0 text-bold">
+                Candidate enter registration details (Customizable fields)
+              </h4>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-xs-3">
+              <img loading="lazy" src="/static/candidateclickspic.png" alt="Candidate-clicks-his-picture" class="center-block img img-responsive" style="height:45px;">
+            </div>
+            <div class="col-xs-9 pl-0">
+              <h4 class="mt-2 pl-0 text-bold">
+                Candidate clicks his picture
+              </h4>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-xs-3">
+              <img loading="lazy" src="/static/idverify.png" alt="Candidate-verifies-his-ID-proof" class="center-block img img-responsive" style="height:45px;">
+  
+            </div>
+            <div class="col-xs-9 pl-0">
+              <h4 class="mt-2 pl-0 text-bold">
+                If Candidate face is verified then only it allow to give exam.
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 col-sm-7">
+          
+          <picture> 
+            <img loading="lazy" src="/static/mettlverify.jpg" alt="Candidate-Authentication" class="img img-responsive"> 
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    </div>
+    </div>
+</section>                
+              </section>
+{% endblock %}

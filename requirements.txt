@@ -1,0 +1,14 @@
+flask
+flask_smorest
+flask-dotenv
+sqlalchemy
+flask-sqlalchemy
+flask-jwt-extended
+passlib
+flask_mail
+flask_wtf
+flask_session
+flask_cors
+Flask-KVSession 
+nltk
+numpy
