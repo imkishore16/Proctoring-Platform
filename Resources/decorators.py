@@ -2,11 +2,11 @@
 from functools import wraps
 from flask import session, flash, render_template, redirect, url_for
 
-def user_role_employeer(f):
+def user_role_employer(f):
     @wraps(f)
     def wrap(*args, **kwargs):
         if 'logged_in' in session:
-            if session['user_role'] == "employeer":
+            if session['user_role'] == "employer":
                 return f(*args, **kwargs)
             else:
                 flash('You dont have privilege to access this page!', 'danger')

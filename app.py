@@ -12,7 +12,7 @@ from db import db
 # from Resources.errors import blp as errors_blueprint
 from Resources.auth import blp as auth_blueprint
 from Resources.error import blp as error_blueprint
-from Resources.employeer import blp as employeer_blueprint
+from Resources.employer import blp as employer_blueprint
 app=Flask(__name__)
 
 def create_app(db_url=None):
@@ -70,7 +70,7 @@ def create_app(db_url=None):
     
     app.register_blueprint(auth_blueprint)
     # app.register_blueprint(error_blueprint)
-    app.register_blueprint(employeer_blueprint)
+    app.register_blueprint(employer_blueprint)
     
     return app
 

@@ -113,7 +113,7 @@ def login():
 def logout(self):
     pass
 
-# @blp.route("/employeer_index",methods=["POST","GET"])
-# # @user_role_employeer
-# def employeer_index():
-#     return render_template('employeer_index.html')
+# @blp.route("/employer_index",methods=["POST","GET"])
+# # @user_role_employer
+# def employer_index():
+#     return render_template('employer_index.html')

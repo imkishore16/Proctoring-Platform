@@ -12,3 +12,6 @@ flask_cors
 Flask-KVSession 
 nltk
 numpy
+pandas
+coolname
+wtforms

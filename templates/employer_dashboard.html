@@ -30,11 +30,17 @@
 <!--Lottie Js-->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 {% block head %}{% endblock %}
   </head>
   <body>
         <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-md-none">
-            <a class="navbar-brand me-lg-5" href="/employeer_index">
+            <a class="navbar-brand me-lg-5" href="/employer_index">
               <center><lottie-player src="https://assets1.lottiefiles.com/packages/lf20_wEt2nn.json"  background="transparent"  speed="1"  style="width: 75px; height: 50px;"  loop  autoplay></lottie-player></center>
             </a>
             <div class="d-flex align-items-center">
@@ -45,7 +51,7 @@
         </nav>
         
         <nav id="sidebarMenu" class="sidebar d-md-block bg-dark text-white flex-md-column flex-row collapse" data-simplebar>
-          <div class="sidebar-inner px-4 pt-3" > 
+          <div class="sidebar-inner px-4 pt-3">
             <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
               <div class="d-flex align-items-center">
                 <div class="user-avatar lg-avatar me-4">
@@ -66,48 +72,45 @@
 
         <ul class="nav flex-column pt-3 pt-md-0">
           <li class="nav-item">
-            <span
-              class="nav-link  collapsed  d-flex justify-content-between align-items-center"
-              data-bs-toggle="collapse" data-bs-target="#submenu-components">
-              <span>
-                <span class="sidebar-icon"><span class="fas fa-plus"></span></span>
-                <span class="sidebar-text">Create Exam</span>
-              </span>
-              <span class="link-arrow"><span class="fas fa-chevron-right"></span></span>
+            <span class="nav-link collapsed d-flex justify-content-between align-items-center"
+                data-bs-toggle="collapse" data-bs-target="#submenu-components">
+                <span>
+                    <span class="sidebar-icon"><span class="fas fa-plus"></span></span>
+                    <span class="sidebar-text">Create Exam</span>
+                    <span class="link-arrow"><span class="fas fa-chevron-right"></span></span>
+                </span>
             </span>
-            <div class="multi-level collapse " role="list"
-              id="submenu-components" aria-expanded="false">
-              <ul class="flex-column nav">
-                <li class="nav-item">
-                  <a class="nav-link"
-                    href="/create-test">
-                    <span class="sidebar-text">Objective</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="/create_test_lqa">
-                    <span class="sidebar-text">Subjective</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="/create_test_pqa">
-                    <span class="sidebar-text">Practical</span>
-                  </a>
-                </li>
-              </ul>
+            <div class="multi-level collapse" role="list" id="submenu-components" aria-expanded="false">
+                <ul class="flex-column nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create-test">
+                            <span class="sidebar-text">Objective</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create_test_lqa">
+                            <span class="sidebar-text">Subjective</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create_test_pqa">
+                            <span class="sidebar-text">Practical</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-          </li>
+        </li>
           <li class="nav-item">
             <a href="/generate_test" class="nav-link">
-              <span class="sidebar-icon" style="color: white;"><span class="fas fa-magic"></span></span>
-              <span class="sidebar-text" style="color: white;">Generate Questions</span>
+              <span class="sidebar-icon"><span class="fas fa-magic"></span></span>
+              <span class="sidebar-text">Generate Questions</span>
             </a>
           </li>
           <li class="nav-item">
             <a href="/viewquestions" class="nav-link d-flex justify-content-between">
               <span>
-                <span class="sidebar-icon" style="color: white;"><span class="fas fa-eye"></span></span>
-                <span class="sidebar-text" style="color: white;">View Questions </span>
+                <span class="sidebar-icon"><span class="fas fa-eye"></span></span>
+                <span class="sidebar-text">View Questions </span>
               </span>
             </a>
           </li>
@@ -203,7 +206,7 @@
                                   </span>. All rights reserved.</p>
                 </div><br>
                 <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
-                      <p class="font-weight-bold font-small mb-0"><span><a href="https://www.google.com/">SaaS name</a></span></p>
+                      <p class="font-weight-bold font-small mb-0"><span><a href="https://www.narenderkeswani.com/">Made with &#128151 By NARENDER KESWANI</a></span></p>
               </div>
               </footer>
   </div>
@@ -297,5 +300,7 @@ swal.fire({
  <!-- Volt JS -->
  <script src="{{ url_for('static', filename='volt/assets/js/volt.js') }}"></script>
 
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
