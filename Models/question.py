@@ -1,7 +1,7 @@
 from db import db
 import json
 
-class QuestionModel(db.model):
+class QuestionModel(db.Model):
     __tablename__="Questions"
     
     id=db.Column(db.Integer,primary_key=True)
@@ -20,7 +20,7 @@ class QuestionModel(db.model):
     tests = db.relationship("TestModel",back_populates="questions",secondary="tests_questions")
 
     #relation between a question and its tags  --> many to many
-    tags =db.relationship("TagModel",backpopulates="question",secondary="questions_tags")
+    tags =db.relationship("TagModel",back_populates="questions",secondary="questions_tags")
     
     
     

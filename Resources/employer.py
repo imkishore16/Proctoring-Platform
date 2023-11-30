@@ -8,7 +8,7 @@ from BetaFiles.Objective import ObjectiveTest
 from coolname import generate_slug
 from werkzeug.utils import secure_filename
 import pandas as pd
-from helper_funcs import UploadForm
+# from helper_funcs import UploadForm
 
 
 
@@ -199,74 +199,70 @@ def updatedispques():
 
 ## many helper funtions inbetween
 
-@blp.route("/livemonitoringtid")
-# @user_role_professor
-def livemonitoringtid():
-    # cur = mysql.connection.cursor()
-    # results = cur.execute(
-    #     'SELECT * from teachers where email = %s and uid = %s and proctoring_type = 1', (session['email'], session['uid']))
-    # if results > 0:
-    #     cresults = cur.fetchall()
-    #     now = datetime.now()
-    #     now = now.strftime("%Y-%m-%d %H:%M:%S")
-    #     now = datetime.strptime(now, "%Y-%m-%d %H:%M:%S")
-    #     testids = []
-    #     for a in cresults:
-    #         if datetime.strptime(str(a['start']), "%Y-%m-%d %H:%M:%S") <= now and datetime.strptime(str(a['end']), "%Y-%m-%d %H:%M:%S") >= now:
-    #             testids.append(a['test_id'])
-    #     cur.close()
-    #     return render_template("livemonitoringtid.html", cresults=testids)
-    # else:
-    #     return render_template("livemonitoringtid.html", cresults=None)
-    return render_template("livemonitoringtid.html", cresults=None)
+# @blp.route("/livemonitoringtid")
+# # @user_role_professor
+# def livemonitoringtid():
+#     # cur = mysql.connection.cursor()
+#     # results = cur.execute(
+#     #     'SELECT * from teachers where email = %s and uid = %s and proctoring_type = 1', (session['email'], session['uid']))
+#     # if results > 0:
+#     #     cresults = cur.fetchall()
+#     #     now = datetime.now()
+#     #     now = now.strftime("%Y-%m-%d %H:%M:%S")
+#     #     now = datetime.strptime(now, "%Y-%m-%d %H:%M:%S")
+#     #     testids = []
+#     #     for a in cresults:
+#     #         if datetime.strptime(str(a['start']), "%Y-%m-%d %H:%M:%S") <= now and datetime.strptime(str(a['end']), "%Y-%m-%d %H:%M:%S") >= now:
+#     #             testids.append(a['test_id'])
+#     #     cur.close()
+#     #     return render_template("livemonitoringtid.html", cresults=testids)
+#     # else:
+#     #     return render_template("livemonitoringtid.html", cresults=None)
+#     return render_template("livemonitoringtid.html", cresults=None)
 
-@blp.route('/create-test', methods=['GET', 'POST'])
-# @user_role_professor
-def create_test():
-    form = UploadForm()
-    if request.method == 'POST' and form.validate_on_submit():
-        test_id = generate_slug(2)
-        filename = secure_filename(form.doc.data.filename)
-        filestream = form.doc.data
-        filestream.seek(0)
-        ef = pd.read_csv(filestream)
-        fields = ['qid', 'q', 'a', 'b', 'c', 'd', 'ans', 'marks']
-        df = pd.DataFrame(ef, columns=fields)
-        # cur = mysql.connection.cursor()
-        # ecc = examcreditscheck()
-        # if ecc:
-        if 1:
-            # for row in df.index:
-            #     cur.execute('INSERT INTO questions(test_id,qid,q,a,b,c,d,ans,marks,uid) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', (test_id,
-            #                 df['qid'][row], df['q'][row], df['a'][row], df['b'][row], df['c'][row], df['d'][row], df['ans'][row], df['marks'][row], session['uid']))
-            #     cur.connection.commit()
-
-            start_date = form.start_date.data
-            end_date = form.end_date.data
-            start_time = form.start_time.data
-            end_time = form.end_time.data
-            start_date_time = str(start_date) + " " + str(start_time)
-            end_date_time = str(end_date) + " " + str(end_time)
-            neg_mark = int(form.neg_mark.data)
-            calc = int(form.calc.data)
-            duration = int(form.duration.data)*60
-            password = form.password.data
-            subject = form.subject.data
-            topic = form.topic.data
-            proctor_type = form.proctor_type.data
-            cur.execute('INSERT INTO teachers (email, test_id, test_type, start, end, duration, show_ans, password, subject, topic, neg_marks, calc,proctoring_type, uid) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
-                        (dict(session)['email'], test_id, "objective", start_date_time, end_date_time, duration, 1, password, subject, topic, neg_mark, calc, proctor_type, session['uid']))
-            mysql.connection.commit()
-            cur.execute('UPDATE users SET examcredits = examcredits-1 where email = %s and uid = %s',
-                        (session['email'], session['uid']))
-            mysql.connection.commit()
-            cur.close()
-            flash(f'Exam ID: {test_id}', 'success')
-            return redirect(url_for('professor_index'))
-        else:
-            flash("No exam credits points are found! Please pay it!")
-            return redirect(url_for('professor_index'))
-    return render_template('create_test.html', form=form)
+# @blp.route('/create-test', methods=['GET', 'POST'])
+# # @user_role_professor
+# def create_test():
+#     form = UploadForm()
+#     if request.method == 'POST' and form.validate_on_submit():
+#         test_id = generate_slug(2)
+#         filename = secure_filename(form.doc.data.filename)
+#         filestream = form.doc.data
+#         filestream.seek(0)
+#         ef = pd.read_csv(filestream)
+#         fields = ['qid', 'q', 'a', 'b', 'c', 'd', 'ans', 'marks']
+#         df = pd.DataFrame(ef, columns=fields)
+#         # cur = mysql.connection.cursor()
+#         # ecc = examcreditscheck()
+#         # if ecc:
+#         try:
+           
+#             #data for test
+#             start_date = form.start_date.data
+#             end_date = form.end_date.data
+#             start_time = form.start_time.data
+#             end_time = form.end_time.data
+#             start_date_time = str(start_date) + " " + str(start_time)
+#             end_date_time = str(end_date) + " " + str(end_time)
+#             neg_mark = int(form.neg_mark.data)
+#             calc = int(form.calc.data)
+#             duration = int(form.duration.data)*60
+#             password = form.password.data
+#             subject = form.subject.data
+#             topic = form.topic.data
+#             proctor_type = form.proctor_type.data
+#             cur.execute('INSERT INTO Test (email, test_id, test_type, start, end, duration, show_ans, password, subject, topic, neg_marks, calc,proctoring_type, uid) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
+#                         (dict(session)['email'], test_id, "objective", start_date_time, end_date_time, duration, 1, password, subject, topic, neg_mark, calc, proctor_type, session['uid']))
+#             mysql.connection.commit()
+#             cur.execute('UPDATE users SET examcredits = examcredits-1 where email = %s and uid = %s',
+#                         (session['email'], session['uid']))
+#             mysql.connection.commit()
+#             cur.close()
+#             flash(f'Exam ID: {test_id}', 'success')
+#             return redirect(url_for('professor_index'))
+#         except SQLAlchemyError as e:
+#             abort(500)
+#     return render_template('create_test.html', form=form)
 
 
 @blp.route('/live_monitoring', methods=['GET', 'POST'])

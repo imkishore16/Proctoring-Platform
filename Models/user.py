@@ -10,4 +10,5 @@ class UserModel(db.Model):
     register_time = db.Column(db.TIMESTAMP, nullable=False, default=datetime.utcnow)
     user_type = db.Column(db.String(25), nullable=False)
     user_image = db.Column(db.Text, nullable=False)
-    user_login = db.Column(db.SmallInteger, nullable=False)
+    
+    

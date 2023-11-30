@@ -15,3 +15,5 @@ numpy
 pandas
 coolname
 wtforms
+requests
+bs4
